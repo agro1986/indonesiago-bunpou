@@ -1,9 +1,41 @@
 \documentclass[uplatex]{jsarticle}
 
+\usepackage{amsthm}
+\usepackage{verbatim}
+\usepackage{xcolor}
+\usepackage[framemethod=tikz]{mdframed}
+
+\theoremstyle{definition}
+\newtheorem*{grammarpoint*}{}
+
+\usepackage{xpatch}
+\makeatletter
+\xpatchcmd{\@thm}{\thm@headpunct{.}}{\thm@headpunct{}}{}{}
+\makeatother
+
+\newcommand{\grammarpoint}[1]{
+\begin{grammarpoint*}
+  \textcolor{blue}{#1}
+\end{grammarpoint*}
+}
+
+\newcommand{\example}[2]{
+例： #1 ― #2
+}
+
+% bold, underline
+\newcommand{\bu}[1]{\underline{\textbf{#1}}}
+
+% bold, indonesia
+\newcommand{\bi}[1]{\bu{#1}}
+
+% bold, japanese
+\newcommand{\bj}[1]{\bu{#1}}
+
 \title{%
-  インドネシア語入門 \\
-  \large 論理的なアプローチ}
+  インドネシア語入門 \\ \large 論理的なアプローチ}
 \author{Agro Rachmatullah}
+\date{}
 
 \begin{document}
 
@@ -16,26 +48,48 @@
 インドネシア語の教科書はたくさんありますが、ほとんどが以下の問題を持っています。
 
 \begin{enumerate}
-  \item できるだけ早く学習者に簡単な会話をしてもらうように、フレーズ本のようなものになっていること
-  \item 最初から読者を驚かさないように、正確な発音の説明を省いてカナ発音でごまかすこと
-  \item 会話で実際に使われているインドネシア語、いわゆるくだけたインドネシア語を教えないこと
+  \item できるだけ早く学習者に簡単な会話をしてもらうように、フレーズ本のような
+    ものになっていること
+  \item 最初から読者を驚かさないように、正確な発音の説明を省いてカナ発音でごま
+    かすこと
+  \item 会話で実際に使われているインドネシア語、いわゆるくだけたインドネシア語
+    を教えないこと
 \end{enumerate}
 
-インドネシア語と日本語の文法はだいぶ違うので、文章を作るときの文の組み立て方ももちろん違います。例えば、友達の近況を聞く時に、日本語では「元気？」というひと言で済みますが、インドネシア語では「Sehat-sehat aja?」という言い方があって、直訳すると「元気元気だけ？」となって面白おかしく感じられますが、インドネシア語の文法によってこのフレーズの構造を説明することができます。フレーズ本のような教科書で勉強すると早く簡単な会話ができるかもしれませんが、場面ごとの複雑なパターンをたくさん丸暗記しないといけなくなります。学習者は結局合理的な文法の理解が把握できないままで、複雑な考えを正確に正しくインドネシア語で伝えるのは困難です。
+インドネシア語と日本語の文法はだいぶ違うので、文章を作るときの文の組み立て方
+ももちろん違います。例えば、友達の近況を聞く時に、日本語では「元気？」という
+ひと言で済みますが、インドネシア語では「Sehat-sehat aja?」という言い方があっ
+て、直訳すると「元気元気だけ？」となって面白おかしく感じられますが、インドネシア語
+の文法によってこのフレーズの構造を説明することができます。フレーズ本のような
+教科書で勉強すると早く簡単な会話ができるかもしれませんが、場面ごとの複雑な
+パターンをたくさん丸暗記しないといけなくなります。学習者は結局合理的な文法の
+理解が把握できないままで、複雑な考えを正確に正しくインドネシア語で伝えるのは
+困難です。
 
-その問題の解決法は文法を簡単なものからだんだん複雑なものへと順序良く教えることです。文法を１つずつゆっくり取り込むことで、その背景にあるインドネシア人の考えも十分説明でき、習得した知識が次の文法の学習や複雑な文章の作成の基礎となります。
+その問題の解決法は文法を簡単なものからだんだん複雑なものへと順序良く教えること
+です。文法を１つずつゆっくり取り込むことで、その背景にあるインドネシア人の考えも十分説明でき、習得した知識が次の文法の学習や複雑な文章の作成の基礎となります。
 
-この教科書はインドネシア語の文法を深く理解できるように文法の知識を積み上げ式で築いていくというアプローチを採用しています。つまり[B]という文法を理解するには[A]という文法が必要なら、ある便利なフレーズを早く教えたいからといって先に[B]を教えるようなことは避けています。そのため、順番や説明は他の教科書とだいぶ違うかもれませんし、会話ができるまで時間もかかるかもしれませんが、順調にレッスンを進むことができると確信しています。
+この教科書はインドネシア語の文法を深く理解できるように文法の知識を積み上げ式で
+築いていくというアプローチを採用しています。つまり[B]という文法を理解するには[A]という文法が必要なら、ある便利なフレーズを早く教えたいからといって先に[B]を教えるようなことは避けています。そのため、順番や説明は他の教科書とだいぶ違うかもれませんし、会話ができるまで時間もかかるかもしれませんが、順調にレッスンを進むことができると確信しています。
 
-インドネシア語は日本語と同じように1つの単語が変わるだけで異なるニュアンスを持つ文章になります。著者はインドネシア語を母語として日本語を勉強しているインドネシア人ですが、新しい文法を紹介する際にインドネシア人がその文法を用いた文章を使う時にどう考えたり感じたりするかをできるだけ詳しく説明して、同じような意味の日本語と比べてみます。
+インドネシア語は日本語と同じように1つの単語が変わるだけで異なるニュアンスを持つ
+文章になります。著者はインドネシア語を母語として日本語を勉強しているインドネシア人ですが、新しい文法を紹介する際にインドネシア人がその文法を用いた文章を使う時にどう考えたり感じたりするかをできるだけ詳しく説明して、同じような意味の日本語と比べてみます。
 
-外国語で会話をするときに、伝えたいことを相手に理解してもらうことが一番大事です。もちろん正しいインドネシア語の文章を作るのは言うまでもなく必要ですが、文章に問題がなくても発音が綺麗ではないと聞き取りにくいです。インドネシア語はローマ字で書かれているのでそのままカタカナみたいに読みがちですが、間違った発音になる場合が多いです。そのためこの教科書はしっかり発音できるようにそれぞれの音をきちんと習ってもらいます。
+外国語で会話をするときに、伝えたいことを相手に理解してもらうことが一番大事です。
+もちろん正しいインドネシア語の文章を作るのは言うまでもなく必要ですが、文章に問題がなくても発音が綺麗ではないと聞き取りにくいです。インドネシア語はローマ字で書かれているのでそのままカタカナみたいに読みがちですが、間違った発音になる場合が多いです。そのためこの教科書はしっかり発音できるようにそれぞれの音をきちんと習ってもらいます。
 
-最後に、従来の教科書で習うインドネシア語はどちらかというとフォーマルなインドネシア語です。ニュース、新聞、スピーチ、講義、論文などは教科書のインドネシア語を使いますが、実際の会話で使われているインドネシア語は単語も動詞の変化などの文法も違います。ここでそのインドネシア語の一種を会話インドネシア語と言って、従来教科書で教えてきたインドネシア語を教科書インドネシア語と言います。元々インドネシア語はそれぞれの地域言語を語る種族を結合させるために作られたので、公式な文法から外れる会話インドネシア語はみんなに理解してもらえないからといって、間違っているインドネシア語で使うべきではないと先生や教科書がその存在自体を否定してきましたが、言語というのは進化するもので今はそのくだけたインドネシア語がもう広く普及されていて実際の会話で使われているので、会話のときに教科書インドネシア語を使うとぶっちゃけ言うと不自然です。
+最後に、従来の教科書で習うインドネシア語はどちらかというとフォーマルなインドネシア語
+です。ニュース、新聞、スピーチ、講義、論文などは教科書のインドネシア語を使いますが、実際の会話で使われているインドネシア語は単語も動詞の変化などの文法も違います。ここでそのインドネシア語の一種を会話インドネシア語と言って、従来教科書で教えてきたインドネシア語を教科書インドネシア語と言います。元々インドネシア語はそれぞれの地域言語を語る種族を結合させるために作られたので、公式な文法から外れる会話インドネシア語はみんなに理解してもらえないからといって、間違っているインドネシア語を使うべきではないと先生や教科書がその存在自体を否定してきましたが、言語というのは進化するもので今はそのくだけたインドネシア語がすでに広く普及されていて実際の会話で使われているので、会話のときに教科書インドネシア語を使うと逆に不自然です。
 
-インドネシア人の子供は親、友達、テレビから言語を習って自然に会話インドネシア語を見につけたけど、現在のインドネシア人向けの国語の教科書の目的はそのくだけたインドネシア語を直すためだからもちろん会話インドネシア語は国語の教科書に載っていません。しかし、その場にふさわしい言葉が言えるのは言語学習の目的だから、その観点から見れば会話の時は教科書インドネシア語は実は間違っていて、正しいのは会話インドネシア語です。従って、インドネシア語を第二言語とした学習者には会話インドネシア語を教えるのは必要不可欠です。
+インドネシア人の子供は親、友達、テレビから言語を習って自然に会話インドネシア語を
+身につけたけど、現在のインドネシア人向けの国語の教科書の目的はそのくだけたインドネシア語を
+直すためだからもちろん会話インドネシア語は国語の教科書に載っていません。しかし、
+その場にふさわしい言葉が言えるのは言語学習の目的だから、その観点から見れば会話の時は
+教科書インドネシア語の方が実は間違っていて、正しいのは会話インドネシア語です。従って、
+インドネシア語を第二言語とした学習者には会話インドネシア語を教えるのは必要不可欠です。
 
-教科書インドネシア語は使われていないわけではないし、会話インドネシア語の文法の基礎となるので、会話インドネシア語の説明は教科書インドネシア語の後にきます。
+教科書インドネシア語は使われていないわけではないし、会話インドネシア語の文法の基礎と
+なるので、会話インドネシア語の説明は教科書インドネシア語の後にきます。
 
 \section{なぜインドネシア語を勉強するか}
 
@@ -47,9 +101,10 @@
 
 インドネシア語はラテン文字（ローマ字）で書かれています。英語みたいにそれは26字の大文字と小文字からなっています:
 
-大文字: ABCDEFGHIJKLMNOPQRSTUVWXYZ
-
-小文字: abcdefghijklmnopqrstuvwxyz
+\begin{tabular}{ll@{\,}l@{\,}l@{\,}l@{\,}l@{\,}l@{\,}l@{\,}l@{\,}l@{\,}l@{\,}l@{\,}l@{\,}l@{\,}l@{\,}l@{\,}l@{\,}l@{\,}l@{\,}l@{\,}l@{\,}l@{\,}l@{\,}l@{\,}l@{\,}l@{\,}l}
+大文字: & A & B & C & D & E & F & G & H & I & J & K & L & M & N & O & P & Q & R & S & T & U & V & W & X & Y & Z \\
+小文字: & a & b & c & d & e & f & g & h & i & j & k & l & m & n & o & p & q & r & s & t & u & v & w & x & y & z
+\end{tabular}
 
 使い分けも英語と同じで、文章の始めや人の名前の頭文字を大文字で書きます。
 
@@ -57,261 +112,381 @@
 
 インドネシア語の母音文字は5個(aiueo)あって、単独でも音節になっていますので発音できます。例えば、「a」自体は日本語の「あ」と同じく発音します。
 
-「b」など残りの文字は子音で、母音と合わせて初めて音節として発音できます。一番簡単な構造は「子音 + 母音」です。例えば「b」という子音と「u」という母音を合わせたら「bu」という音節になって日本語の「ぶ」と発音します。
+「b」など残りの文字は子音で、母音と合わせて初めて音節として発音できます。一番簡単な構造は「子音
++
+母音」です。例えば「b」という子音と「u」という母音を合わせたら「bu」という音節に
+なって日本語の「ぶ」と発音します。
 
-カタカナで表現できるインドネシア語の音は限られているので、ここで大括弧の中のローマ字で発音を示します。「·」で音節を区切って、例えば「abu」（灰）の発音は[a·bu]と書きます。
+カタカナで表現できるインドネシア語の音は限られているので、ここで大括弧の中のローマ字で
+発音を示します。「$\cdot$」で音節を区切って、例えば「abu」（灰）の発音は[a$\cdot$bu]と書きます。
 
-「母音 + 子音」の音節もあって、例としては「an」です。「anda」（あなた）の発音は「あんだ」みたいで、発音記号で[an·da]と表します。
+「母音 +
+子音」の音節もあって、例としては「an」です。「anda」（あなた）の発音は「あんだ」みたいで、発音記号で[an$\cdot$da]と表します。
 
-「子音 + 母音 + 子音」や「子音 + 子音 + 母音 + 子音」などもっと複雑な音節などもありますけど、後で少しずつ紹介していきます。
+「子音 + 母音 + 子音」や「子音 + 子音 + 母音 +
+子音」などもっと複雑な音節などもありますが、後で少しずつ紹介していきます。
 
-韓国語などを勉強する場合、その言語の文字をまず勉強しないと全然読めないです。しかしインドネシア語は見慣れたラテン文字で書かれているから一応日本語のローマ字表記のように読めます。説明したように、正しい発音と違うケースが多いですが、発音の勉強は結構大変なことで時間がかかるので、発音編を終えてから文法編に入るより、ローマ字発音で文法の勉強を始めて、同時に少しずつ発音編を読みながら自分の発音を直していくのが一番ラクかもしれません。
+韓国語などを勉強する場合、その言語の文字をまず勉強しないと全然読めないです。しかし
+インドネシア語は見慣れたラテン文字で書かれているので一応日本語のローマ字表記のように
+読めます。説明したように、正しい発音と違うケースが多いですが、発音の勉強は結構時間
+がかかって大変なことなので、発音編を終えてから文法編に入るより、ローマ字発音で文法の
+勉強を始めて、同時に少しずつ発音編を読みながら自分の発音を直していくのが一番ラクかもしれません。
 
 \subsection{aiueo}
 
-母音は音節の基礎になるので、まず全部しっかりと習います。インドネシア語の母音文字は「aiueo」と5個あって、でも実は「e」という文字には二通り発音があるので、6個の母音があります。
+母音は音節の基礎になるので、まず全部しっかりと習います。インドネシア語の母音文字は
+「aiueo」と5個ありますが、実は「e」という文字には二通り発音があるので、6個の母音があります。
 
 「a」、「i」、と「o」の発音は日本語の「あ」、「い」、と「お」と同じなので、問題ないです。
 
-この３つの母音からでももう単語が作れます。しかし、母音が連続で出てくると、単語によって発音も色々です。それは単語ごとに憶えるしかないですけど、ここでその違いは発音の表記で表します。
+この３つの母音からでもすでに単語が作れます。しかし、母音が連続で出てくると、単語によって発音も色々です。それは単語ごとに憶えるしかないが、ここでその違いは発音の表記で表します。
 
 「oi」という単語は発音的にも意味的にも日本語の「おい！」と相当します。この場合は一つの音節としてoとiの音を合わせて速く発音します。発音記号で[oi]と書きます。
 
-「多い」みたいな2音節の発音は[o·i]と書きますが、「·」は音節の区切りを表します。
+「多い」みたいな2音節の発音は[o$\cdot$i]と書きますが、「$\cdot$」は音節の区切りを表します。
 
-「ia」(彼、彼女)はちゃんと二つの音節として発音するので、発音表記は[i·a]。「威圧」を、最後の「つ」を除いて発音するのと同じです。
+「ia」(彼、彼女)はちゃんと二つの音節として発音するので、発音表記は[i$\cdot$a]となります。「威圧」を、最後の「つ」を除いて発音するのと同じです。
 
 「ia」の例では、実はiとaの音をスムーズにつないで「いや」と発音します。最後のパターンは切り離して発音するパターンです、例として「AI」という単語を使います。
 
-「AI」は英語の「Artificial Intelligence(人工知能)」の略なので大文字で書きます。発音は「愛」みたいではなくて「あ・い・う・え・お」の「あ・い」の部分みたいです。これは発音記号で[a·'i]と書きます。「a」の前の「'」はつなげないでという意味です。
+「AI」は英語の「Artificial
+Intelligence(人工知能)」の略なので大文字で書きます。発音は「愛」みたいではなく「あ・い・う・え・お」の「あ・い」の部分みたいです。これは発音記号で[a$\cdot$'i]と書きます。「i」の前の「'」はつなげないでという意味です。
 
 その3種類をまとめて下の表を書きますが、それぞれの発音の違いはオーディオファイルを聞いてください。
 
-[ai]		一音節として発音する
+\begin{tabular}{ll}
+[ai] & 一音節として発音する（英語の「eye」みたい） \\\relax
+[a$\cdot$i] & 二音節、スムーズに発音する（「愛」みたい） \\\relax
+[a$\cdot$'i] & 二音節、切り離して発音する（「あ・い・う・え・お」の「あ・い」みたい）
+\end{tabular}
 
-[a·i]		二音節、スムーズに発音する
-
-[a·'i]		二音節、切り離して発音する
+\subsection{他の音}
 
 \section{等しさ}
 
-あるものが何かであることを伝えるのはどの言語でも一番基本的なことです。例えば、日本語では指で指すものがペンであることを伝えたいときに「これはペンだ」と言います。インドネシア語では「adalah」を使います。
+あるものが何かであることを伝えるのはどの言語でも一番基本的なことです。例えば、日本語では指で指すものがペンであることを伝えたいときに「これはペンだ」と言います。インドネシア語は「adalah」を使います。
 
-\textbf{「adalah」を使ってあるものが何かだと断言する}
+\grammarpoint{「adalah」を使ってあるものが何だかを断言する}
+
 名詞の間に「adalah」を入れる
-例： Ini \textbf{adalah} pulpen. ― これはペン\textbf{だ}。
 
-ここで「adalah」は日本語の「だ」の役割を果たしますが、使い方は数学の「=」みたいで真ん中に入れます。「adalah」の左側と右側は同じものなので等しさの表現と言って、「A adalah B」を見たら「A = B」を想像すればいいです。
+\example{Ini \bi{adalah} pulpen. }{これはペン\bj{だ}。}
 
-例：
-Itu \textbf{adalah} buku.
-あれは本\textbf{だ}。
+ここで「adalah」は日本語の「だ」の役割を果たしますが、使い方は数学の「=」みたいで真ん中に入れます。「adalah」の左側と右側は同じものなので等しさの表現と言って、「A
+adalah B」を見たら「A = B」を想像すればいいです。
 
-Dia \textbf{adalah} teman.
-彼は友達\textbf{だ}。
+\example{Itu \bi{adalah} buku.}{あれは本\bj{だ}。}
 
-Anto \textbf{adalah} guru.
-アントは先生\textbf{だ}。
+\example{Dia \bi{adalah} teman.}{彼は友達\bj{だ}。}
 
-簡単でしょう。でも実は「adalah」について一つ重要な使い方がある。
+\example{Anto \bi{adalah} guru. }{アントは先生\bj{だ}。}
 
-等しさの表現で「adalah」を省略してもいい！
+簡単でしょう。でも実は「adalah」について一つ重要な使い方があります。
+
+等しさの表現では「adalah」を省略しても大丈夫です！
 
 これは日本語みたいに「だ」を省略して「これはペン」と言っても意味が伝わります。普通の会話では「adalah」はわざわざ言わないです。
 
-例：
-Ini pulpen.
-これはペン。
+\example{Ini pulpen.}{これはペン。}
 
-Dia teman.
-彼は友達。
+\example{Dia teman. }{彼は友達。}
 
-じゃいつ「adalah」を使うのと聞くかもしれませんが、百科事典や論文などで定義をする時に「adalah」を使います。そういうような場合しか普通使わないので「adalah」は堅苦しく聞こえます。その他に「adalah」の左側または右側が長いとき、相手がその区切りが簡単にわかるように「adalah」を使う場合が多いです。
+ではいつ「adalah」を使うかというと、百科事典や論文などで定義をする時に「adalah」を使います。
+そのような場合しか普段使わないので「adalah」は堅苦しく聞こえます。その他に「adalah」の左側または右側が長いとき、相手がその区切りが簡単にわかるように「adalah」を使うことが多いです。
 
-\textbf{「adalah」の否定形}
+\subsection*{「adalah」の否定形}
 
 否定するときに「adalah」は「bukan」に変わります。
 
-\textbf{「bukan」を使ってあるものが何かじゃないと否定する時}
-名詞の間に「bukan」を入れる
-例： Ini \textbf{bukan} pulpen. ― これはペン\textbf{じゃない}。
+\grammarpoint{「bukan」を使ってあるものが何かではないと否定する}
 
-例：
-Dia \textbf{bukan} murid.
-彼は学生\textbf{じゃない}。
+その時も名詞の間に「bukan」を入れる
 
-Itu \textbf{bukan} makanan.
-あれは食べ物\textbf{じゃない}。
+\example{Ini \bi{bukan} pulpen.}{これはペン\bj{じゃない}。}
+
+\example{Dia \bi{bukan} murid. }{彼は学生\bj{じゃない}。}
+
+\example{Itu \bi{bukan} makanan. }{あれは食べ物\bj{じゃない}。}
 
 ご覧のように使い方は数学の「≠」みたいです。
 
-日本語の場合「だ」の活用を説明するとき過去形の「だった」と「じゃなかった」を説明するのは当然ですが、インドネシア語では過去形の活用がないです。過去を表すために時に関する単語を入れますが、それは他の章で詳しく説明します。
+日本語の場合「だ」の活用を説明するとき過去形の「だった」と「じゃなかった」を説明するのは当然ですが、インドネシア語では過去形の活用がないです。過去を表すために「昨日」や「先月」など時間を表す単語を入れますが、その使い方は他の章で詳しく説明します。
 
-\textbf{まとめ}
+\subsection*{まとめ}
 
 ここで等しさの表現とその否定形を勉強しました。次はものの性質を形容詞で表すことを勉強します。この章で勉強したことを表でまとめます。
 
-		等しさの表現
-肯定的	ini \textbf{(adalah)} pulpen
-否定的	ini \textbf{bukan} pulpen
+\textbf{等しさの表現}
 
--------
+\begin{tabular}{ll}
+肯定的 & ini \bi{(adalah)} pulpen \\
+否定的 & ini \bi{bukan} pulpen
+\end{tabular}
 
-
+\begin{comment}
 あるものがなにかであること
-
 
 状態
 あるものと他のものが同じだということを伝えるのはどの言語でも基本的なことです。と言う時に、指したものは
-
----
+\end{comment}
 
 \section{性質}
 
 ものの性質を表すときに形容詞を使いますが、日本語で言うと「寿司は美味しい」の「美味しい」はその形容詞です。インドネシア語では名詞と形容詞をちゃんと区別して「adalah」ではなく「bersifat」を使います。
 
-\textbf{「bersifat」を使ってあるものの性質を伝える}
-説明するものと形容詞の間に「bersifat」を入れる
-例： Dia \textbf{bersifat} baik.  ― 彼は優しい。
+\grammarpoint{「bersifat」を使ってあるものの性質を伝える}
 
-「baik」は直訳すると「いい」になりますが、<link:internal>人</link:internal>の性格として「優しい」にも訳せるでしょう。
+説明するものと形容詞の間に「bersifat」を入れる
+
+\example{Dia \bi{bersifat} baik.}{彼は優しい。}
+
+「baik」は直訳すると「いい」になりますが、人の性格として「優しい」にも訳せるでしょう。
 
 「adalah」のように、「bersifat」も普通省略します。
 
-例：
-Dia baik.
-彼は優しい。
+\example{Dia baik.}{彼は優しい。}
 
-Saya sehat.
-私は健康です。
+\example{Saya sehat.}{私は健康。}
 
-Sushi enak。
-寿司は美味しい。
+\example{Sushi enak。}{寿司は美味しい。}
 
-\textbf{「bukan」の形容詞バージョン}
+\subsection*{「bukan」の形容詞バージョン}
 
-ものの性質を否定する時に名詞用の「bukan」を使わないように注意してください。形容詞の場合は「tidak」を使います。
+ものの性質を否定する時に名詞用の「bukan」を使わないように注意してください。
+形容詞の場合は「bersifat」が「tidak bersifat」に変わります。
 
-\textbf{「tidak」を使ってあるものの性質を否定する}
-説明するものと形容詞の間に「tidak」を入れる
-例： Dia \textbf{tidak} baik.  ― 彼は優しく\textbf{ない}。
+\grammarpoint{「tidak bersifat」を使ってあるものの性質を否定する}
 
-例：
-Saya \textbf{tidak} sehat.
-私は健康\textbf{じゃない}。
+説明するものと形容詞の間に「tidak bersifat」を入れる
 
-Sushi \textbf{tidak} enak.
-寿司は美味しく\textbf{ない}。
+\example{Dia \bi{tidak bersifat} baik.}{彼は優しく\bj{ない}。}
 
-\textbf{まとめ}
+もう驚かないと思いますが、「tidak bersifat」は長いので「tidak」に省略します。
 
-名詞か形容詞を扱うことによって必要な単語も異なりますが、それだけ気をつければ難しい活用がないので簡単です。
+\example{Saya \bi{tidak} sehat.}{私は健康\bj{じゃない}。}
 
-		性質の表現
-肯定的	ini \textbf{(bersifat)} enak
-否定的	ini \textbf{tidak} enak
+\example{Sushi \bi{tidak} enak.}{寿司は美味しく\bj{ない}。}
+
+\subsection*{まとめ}
+
+名詞か形容詞を扱うことによって必要な単語も異なりますが、それだけ気をつければ難しい活用がないです。
+
+\textbf{性質の表現}
+
+\begin{tabular}{ll}
+肯定的 & ini \bi{(bersifat)} enak \\
+否定的 & ini \bi{tidak (bersifat)} enak
+\end{tabular}
 
 \section{形容詞で修飾する}
 
-日本語では名詞を修飾するときに「白い雲」のように描写する単語(白い)を前に置きます。それはあたり前だと思うかもしれませんが、実はインドネシア語ではその順番は逆です！
+日本語では名詞を修飾するときに「白い雲」のように描写する単語(白い)を前に置きます。それはあたり前だと思うかもしれませんが、実はインドネシア語では順番は逆です！
 
-\textbf{形容詞で修飾する}
+\grammarpoint{「yang」を使って形容詞で名詞を修飾する}
+
 形容詞を名詞の後に置く
-例：masakan \textbf{enak} ― \textbf{おいしい}料理
 
-上記では説明される名詞「masakan」(料理)は最初にきて、後に続くのは描写する形容詞「enak」(おいしい)です。他の例：
+\example{wanita \bi{yang} cantik}{きれい\bi{な}女性}
 
-baju biru
-青い服
+説明される名詞「wanita」(女性)は最初にきて、後に続くのは描写する形容詞「cantik」(きれい)です。
+この順番に気を付けてください。
 
-pemandangan indah
-きれいな景色
+このように見たら、「yang」は日本語の「な」の役割を果たしているように見えますが、正確にいうとインドネシア語
+では「yang」は「の方」とういニュアンスがあるので、「きれいな方の女性」という意味に近いです。
 
-orang pendiam
-静かな人
+インドネシア人は省略するのが好きなので、「yang」は普段省略します。
 
-awan putih
-白い雲
+\example{masakan \bi{enak}}{\bj{おいしい}料理}
+
+\example{baju \bi{biru}}{\bj{青い}服}
+
+\example{pemandangan \bi{indah}}{\bj{美しい}景色}
+
+\example{orang \bi{pendiam}}{\bj{静かな}人}
+
+\example{awan \bi{putih}}{\bj{白い}雲}
 
 英語も日本語と同じ順番なので最初はインドネシア語の順番に違和感を感じるかもしれませんが、練習を繰り返して馴れるしかないです。もっと複雑な例：
 
-Ini adalah mobil mahal.
-これは高い車だ。
+\example{Ini adalah mobil yang mahal.}{これは高い車だ。}
 
-Dia anak pintar.
-彼は頭がいい子だ。
+\example{Dia anak pintar.}{彼は頭がいい子。}
 
-Itu bukan baju baru.
-あれは新しい服じゃない。
+\example{Itu bukan baju baru.}{あれは新しい服じゃない。}
 
-前章で説明された通り、「bersifat」は省略するので、1つの文章が曖昧な場合があります。例えば「mawar merah」は「赤いバラ」という意味にもなりますが、もしかしてそれは「mawar (bersifat) merah」で「バラは赤い」という意味の文章です。このとき文脈で正しい意味を把握するしかないですが、ほとんどの場合そらははっきりなので全然難しくないです。他の例：
+前章の「bersifat」も今回の「yang」も省略するので、1つの文章が曖昧な場合があります。例えば「mawar
+merah」は「バラは赤い」(mawar bersifat merah)という意味にもなりますが、もしかして「赤いバラ」
+(mawar yang merah)という意味かもしれません。このとき文脈で正しい意味を把握するしかないですが、ほとんどの場合そらははっきりなので全然難しくないです。他の例：
 
-komputer murah
-安いパソコン
-または
-パソコンは安い (komputer bersifat murahの省略)
+\example{komputer murah}{「安いパソコン」(komputer yang murah)または
+「パソコンは安い」 (komputer bersifat murah)}
 
-Ini komputer murah.
-これは安いパソコンだ。
+\example{Ini komputer murah.}{これは安いパソコン。(Ini adalah komputer yang murahの省略)}
 
-\textbf{yang}
+\subsection*{yang tidak}
 
-形容詞の否定形は「tidak」という単語を使うので、「tidak enak」のように2単語の句になります。一単語じゃなくて、複雑な句で修飾したい場合によく「yang」を使いますが、否定形の形容詞の場合もそうです。
+形容詞の否定形は「tidak」を使うので、そのまま「yang」と一緒に使ったら否定形で名詞を修飾することができます。
 
-\textbf{否定形の形容詞で修飾する}
-名詞と形容詞の間に「yang」を入れる
-例：masakan yang tidak enak ― おいしくない料理
+\grammarpoint{否定形の形容詞で修飾する}
 
-この「yang」は実は日本語の「方」と近い意味を持っているので、ニュアンス的には「おいしくない方の料理」と近いです。
+否定形の形容詞（tidak ...）を名詞の後に置く
 
-他の例：
-kelas yang tidak susah
-難しくない授業
+\example{masakan yang tidak enak}{おいしくない料理}
 
-sungai yang tidak bersih
-嫌いじゃない川
+前も説明しましたが、この「yang」は日本語で「の方」と近い意味を持っているので、
+ニュアンス的には「おいしくない方の料理」と近いです。
 
-Mereka murid yang tidak rajin.
-彼らは真面目じゃない学生だ。
+\example{kelas yang tidak susah}{難しくない授業}
 
-Itu contoh yang tidak benar.
-それは正しくない例だ。
+\example{sungai yang tidak bersih}{きれいじゃない川}
 
-\textbf{まとめ}
+\example{Mereka murid yang tidak rajin.}{彼らは真面目じゃない学生だ。}
 
-形容詞で修飾する時に、語順さえおぼえれば問題がないはずです。
+\example{Itu contoh yang tidak benar.}{それは正しくない例だ。}
 
-		形容詞の修飾
-肯定的	masakan enak
-否定的	masakan yang tidak enak
+今回の否定形の場合は「yang」はあまり省略しないです。
 
---------------------
+\subsection*{複合語}
 
-\textbf{iniとitu}
+説明されたものと形容詞の順番は日本語と逆なんですが、
+複合語を作るときも同じ現象が起こります。
+
+例えば、「病院」という複合語はインドネシア語では
+「rumah sakit」と言いますが、インドネシア語の順番でそのまま
+日本語で書くと「院病」になります。他の例はたくさんあります。
+
+\example{kamar tidur}{寝室(直訳：室寝)}
+
+\example{hari libur}{休日(直訳：日休)}
+
+\example{nasi goreng}{炒飯(直訳：飯炒)}
+
+\subsection*{まとめ}
+
+形容詞で修飾する時に、語順さえおぼえれば簡単です。
+
+\textbf{形容詞の修飾}
+
+\begin{tabular}{ll}
+肯定的 & masakan \bi{(yang)} enak \\
+否定的 & masakan \bi{yang tidak} enak
+\end{tabular}
+
+\section{dan}
+
+複数のものを並べるときに「dan」を使います。日本語の「と」と同じです。
+
+\example{aku \bi{dan} dia}{私\bj{と}彼女}
+
+３個以上の物の場合も続けてdanで繋げられます。
+
+\example{Martabak dan nasi goreng dan sushi enak.}{マルタバックとナシゴレンと寿司は美味しい。}
+
+ただし上のやり方は長くなるので、カンマを使って一番最後にだけdanを使うことが多いです。
+
+\example{Martabak, nasi goreng, dan sushi enak.}{マルタバックとナシゴレンと寿司は美味しい。}
+
+\example{Mereka adalah Anto, Budi, Siti, dan Joko.}{彼らはアント、ブディ、シティ、とジョコだ。}
+
+形容詞も同じく「dan」を使います。
+
+\example{Dia cantik, baik, dan pintar.}{彼女はきれいで優しくて頭がいい。(Dia bersifat cantik, baik, dan pintarの略)}
+
+名詞を修飾するときも同じです。
+
+\example{Ini adalah bangunan yang baru dan tinggi.}{これは新しくて高い建物。}
+
+修飾するときに、「yang」と「dan」は両方省略できます。
+
+\example{Tempe dan telur adalah makanan enak dan murah。}{テンペと卵は美味しくて安い食べ物だ。(yangを省略)}
+
+\example{Itu rumah mahal besar.}{あれは高くて大きい家。(yangもdanも省略)}
+
+ただし３つ以上だと、最後は必ず「dan」を入れます。
+
+\example{Dia atlit muda, kuat, dan tampan.}{彼は若くて強くてハンサムな選手。}
+
+\section{iniとitu}
+
+ものを指すときに「ini」（これ）と「itu」（それ・あれ）を使います。
+
+\example{ini buku.}{これは本。}
+
+\example{itu mahal.}{それは（値段が）高い。}
+
+\example{itu rumah baru.}{あれは新しい家。}
+
+日本語では名詞を修飾するときに「この・その・あの」に変わりますが、
+インドネシア語では前章と同じく「yang」を使います。
+
+\example{toko \bi{yang} ini}{こ\bj{の}店}
+
+もちろん「yang」は省略出来ます。
+
+\example{Toko \bi{ini} besar.}{\bj{この}店は大きい。(Toko yang ini bersifat besarの省略)}
+
+\example{Stasiun \bi{ini} Shinjuku.}{\bj{この}駅は新宿。(Stasiun yang ini adalah Shinjukuの省略)}
+
+\example{Sekolah \bi{itu} jauh.}{\bj{あの}学校は遠い。}
+
+日本語で指を指しながら「この青い本」とか言いますが、
+そのとき「この・その・あの」は最初に来ます。
+
+インドネシア語の修飾順番は日本語と逆なので、修飾するときに「ini/itu」は一番最後に来ます！
+特別扱いされるので、「dan」が要るかどうかを考えるときに「ini/itu」以外の形容詞を
+考えればいいです。
+
+\example{buku besar \bi{ini}}{\bj{この}大きい本}
+
+「buku besar」はもちろんそのまま言えるので、「dan」は要らないです。
+
+\example{Makanan enak \bi{itu} mahal.}{\bj{この}美味しい食べ物は高い。(Makanan yang enak itu bersifat mahalの省略)}
+
+\example{buku biru besar \bi{ini}}{\bj{この}大きくて青い本}
+
+「buku biru besar」は言えるので上の文章は正しいです。
+「buku yang biru dan besar ini」ももちろん言えます。
+
+\example{Kamar besar, bersih, dan terang itu mahal.}{この大きくてきれいで明るい部屋は高い。}
+
+「Kamar besar, bersih, dan terang」の部分は３つの形容詞から出来ているので「dan」が必要です。
+
+名詞を修飾するときに「ini/itu」は必ず最後に来るので、これを使ったら曖昧な文章もはっきりになります。
+
+\example{baju murah}{「服は安い」(baju bersifat murah)または「安い服」(baju yang murah)}
+
+上の文章は両方の意味が可能だけど、「ini」を入れたら一つの意味しか持たないです。
+
+\example{baju murah ini}{この安い服(baju yang murah ini)}
+
+\example{Baju ini murah.}{この服は安い(baju yang ini bersifat murah)}
+
+文章の一番最初に入れたらまた違う意味になります。
+
+\example{Ini baju murah.}{これは安い服(Ini adalah baju yang murah)}
+
+sini
+situ
+sana (もっと遠い)
+
+begini
+begitu
 
 
 
 
+masakan yang enak masakan yang tidak enak anak yang pintar anak yang
+tidak pintar
 
-masakan yang enak
-masakan yang tidak enak
-anak yang pintar
-anak yang tidak pintar
+peserta yang orang jepang peserta yang bukan orang jepang harus
+mendaftar peserta bukan orang jepang harus mendaftar
 
-peserta yang orang jepang
-peserta yang bukan orang jepang harus mendaftar
-peserta bukan orang jepang harus mendaftar
+buku yang bahasa indonesia saya orang yang indonesia
 
-buku yang bahasa indonesia
-saya orang yang indonesia
+peserta orang jepang tinggi peserta orang jepang yang tinggi peserta
+bukan orang jepang yang tinggi peserta yang orang jepang dan yang tinggi
 
-peserta orang jepang tinggi
-peserta orang jepang yang tinggi
-peserta bukan orang jepang yang tinggi
-peserta yang orang jepang dan yang tinggi
-
-mas-mas yang mobilnya mahal itu
-車が高いお兄さん
+mas-mas yang mobilnya mahal itu 車が高いお兄さん
 
 形容詞
 
@@ -319,24 +494,15 @@ mas-mas yang mobilnya mahal itu
 
 所有
 
-ini
-itu
+ini itu
 
-rumah makan
-rumah sakit
-buku tulis ノート
-tanda tanya
+rumah makan rumah sakit buku tulis ノート tanda tanya
 
-orang indonesia
-bahasa jepang
-kamus bahasa Inggris
-buku ini
+orang indonesia bahasa jepang kamus bahasa Inggris buku ini
 
-orang kaya
-buku biru
+orang kaya buku biru
 
-buku bahasa indonesia biru milik toni
-トニーの青いインドネシア語の本
+buku bahasa indonesia biru milik toni トニーの青いインドネシア語の本
 
 生涯学習センター
 
@@ -367,36 +533,13 @@ indonesiagonyuumon.com
 
 このサイトへようこそ。ここの資料を使ってみなさんが自分の家から無料でインドネシア語を勉強することができます。
 
---------------------
-それぞれの文字の名前は以下のビデオでご覧できます
+-------------------- それぞれの文字の名前は以下のビデオでご覧できます
 [ビデオ]
 
-a ア a
-b ベ bé
-c チェ cé
-d デ dé
-e エ é
-f エフ éf
-g ゲ gé
-h ハ ha
-i イ i
-j ジェ jé
-k カ ka
-l エル él
-m エム ém
-n エン én
-o オ o
-p ペ pé
-q キ ki
-r エル ér
-s エス és
-t テ té
-u ウ u
-v フェ fé
-w ウェ wé
-x エクス éks
-y イェ yé
-z ゼット zét
+a ア a b ベ bé c チェ cé d デ dé e エ é f エフ éf g ゲ gé h ハ ha i イ i
+j ジェ jé k カ ka l エル él m エム ém n エン én o オ o p ペ pé q キ ki r
+エル ér s エス és t テ té u ウ u v フェ fé w ウェ wé x エクス éks y イェ
+yé z ゼット zét
 
 教科書インドネシア語編
 
@@ -410,272 +553,162 @@ z ゼット zét
 
 b,c,d
 
-baca
-coba
-dada
+baca coba dada
 
 -----------------------
 
 u
 
-babu
-dadu
-cuci
+babu dadu cuci
 
 -----------------------
 
 n,m
 
-nama [na-ma]
-mana [ma-na]
-bumi [bu-mi]
-damai [da-mai]
-mau [ma-u]
+nama [na-ma] mana [ma-na] bumi [bu-mi] damai [da-mai] mau [ma-u]
 
 -----------------------
 
 e
 
-lele
-emu
+lele emu
 
 -----------------------
 
-勉強の理由
-仕事
-結婚
-友達
-趣味
+勉強の理由 仕事 結婚 友達 趣味
 
-lとrの区別
-pasal pasar
+lとrの区別 pasal pasar
 
 é-nak
 
-rokokの最後のkは発音しない
-nenek
-ko'
+rokokの最後のkは発音しない nenek ko'
 
-oa
-doa do-'a
-soal so-'al
-oasis o-a-sis
-koala ko-a-la
+oa doa do-'a soal so-'al oasis o-a-sis koala ko-a-la
 
-ai
-pantai pan-tai
-air a-ir
-santai san-tai
-lain la-in
+ai pantai pan-tai air a-ir santai san-tai lain la-in
 
-au
-mau ma-u
-kalau ka-lau
+au mau ma-u kalau ka-lau
 
-ng
-sangat sa-ngat
-lengah le-ngah
-mangga mang-ga
+ng sangat sa-ngat lengah le-ngah mangga mang-ga
 
 lemahなどのhはバッハ
 
 lain vs menggapaiのpai
 表記が同じなのに発音が違う。なので、発音の表記も必要。
 
-不規則な発音
-tahu -> tau
-silakan -> silahkan
-menteri ->mentri
+不規則な発音 tahu -> tau silakan -> silahkan menteri ->mentri
 
-文字と発音
-aiueo
-eの２つの発音
-abcdefghijklmnop
-q = k
-r
-stu
-v=f
-w
-x = s
+文字と発音 aiueo eの２つの発音 abcdefghijklmnop q = k r stu v=f w x = s
 yz
 
 古いスペル
 
 数字の個数(ekor, buah, lembar)
 
-自己紹介
-Perkenalkan
-Saya NAMA
-Saya X tahun
-Saya mahasiswa
-Saya orang NEGARA
+自己紹介 Perkenalkan Saya NAMA Saya X tahun Saya mahasiswa Saya orang
+NEGARA
 
-慣用表現
-selamat pagi
-selamat siang
-selamat malam
-terima kasih
-sama-sama
-maaf
-tidak apa-apa
+慣用表現 selamat pagi selamat siang selamat malam terima kasih sama-sama
+maaf tidak apa-apa
 
 ---------------------------
 
 教科書の文法　対　会話の文法
 
-eh, besok ada pr nggak?
-wah, aku juga lupa. ntar aku coba tanya si andi ya?
-ok deh. kabarin lagi ya nanti.
+eh, besok ada pr nggak?  wah, aku juga lupa. ntar aku coba tanya si andi
+ya?  ok deh. kabarin lagi ya nanti.
 
 
 
-eh, kamu udah denger belum kalau joni mau ke luar negeri?
-yang bener? mau ke mana?
-ke jepang katanya buat sekolah.
-keren banget! emang dia dapet beasiswa ya?
-iya katanya. Ntar di kelas kita tanya-tanya yuk.
+eh, kamu udah denger belum kalau joni mau ke luar negeri?  yang bener?
+mau ke mana?  ke jepang katanya buat sekolah.  keren banget! emang dia
+dapet beasiswa ya?  iya katanya. Ntar di kelas kita tanya-tanya yuk.
 
 ---------------------------
 
-教科書文法編
- 
-イ文→等しさ
-イ文→性質
-イ分→形容詞で修飾する
-イ分→所有
+教科書文法編   イ文→等しさ イ文→性質 イ分→形容詞で修飾する イ分→所有
 
 
 
-過去
-Ini dulu adalah buku
-Dia dulu adalah teman
-Anto dulu adalah guru
-位置
-Dulu Anto adalah guru
-Anto adalah guru dulu
-(adalah guru) はVOのペアで入れることができない
+過去 Ini dulu adalah buku Dia dulu adalah teman Anto dulu adalah guru
+位置 Dulu Anto adalah guru Anto adalah guru dulu (adalah guru)
+はVOのペアで入れることができない
 
-Ini dulu bukan buku
-Dia dulu bukan teman
-Anto dulu bukan guru
+Ini dulu bukan buku Dia dulu bukan teman Anto dulu bukan guru
 
 duluだけじゃなくてkemarin
 
-Ini kemarin bukan buku
-Dia tahun lalu bukan teman
-Anto besok bukan guru
+Ini kemarin bukan buku Dia tahun lalu bukan teman Anto besok bukan guru
 
 書き言葉
 
 --------------------------------
 
-ini itu
-dia
+ini itu dia
 
-Rumah ini
-Rumah itu
-Buku ini
-Buku itu
+Rumah ini Rumah itu Buku ini Buku itu
 
 toko nasi goreng ayam enak itu
 
-Ini apa?
-Itu apa?
-Dia siapa?
-Dia presiden
-Dia siapa?
-Dia anto
+Ini apa?  Itu apa?  Dia siapa?  Dia presiden Dia siapa?  Dia anto
 
 --------------------------------
 
-Baju ini bersifat mahal
-Rumah itu bersifat biru
+Baju ini bersifat mahal Rumah itu bersifat biru
 
-Nasi goreng enak
-Baju ini mahal
-Rumah itu biru
+Nasi goreng enak Baju ini mahal Rumah itu biru
 
-Nasi goreng tidak enak
-Baju ini tidak mahal
-Rumah itu tidak biru
-Dia tidak baik
+Nasi goreng tidak enak Baju ini tidak mahal Rumah itu tidak biru Dia
+tidak baik
 
 Nasi goreng dulu tidak enak
 ...
 
 
-(adalah) time marker (+ adalah)
-bukan time marker + bukan
+(adalah) time marker (+ adalah) bukan time marker + bukan
 
-(bersifat) time marker (+bersifat)
-tidak time marker (+bersifat)
+(bersifat) time marker (+bersifat) tidak time marker (+bersifat)
 
 ---------------
 
-harga buku itu mahal
-harganya mahal
-その本の値段が高い
-値段が高い
+harga buku itu mahal harganya mahal その本の値段が高い 値段が高い
 
-harga buku mahal itu...
-ituの位置が大事
+harga buku mahal itu...  ituの位置が大事
 
-cerita film itu menarik
-ceritanya menarik
-その映画のストーリーが面白い
+cerita film itu menarik ceritanya menarik その映画のストーリーが面白い
 ストーリーが面白い
 
 nyaは「何か」を明記的に表す単語
 
 ---------------
 
-buku yang harganya mahal
-値段が高い本
-baju yang warnanya biru
-色が青い服
+buku yang harganya mahal 値段が高い本 baju yang warnanya biru 色が青い服
 
 ----------------
 
 形容詞
 
-Buku biru
-anak baik
+Buku biru anak baik
 
 動詞
 
-辞書形 = 命令形
-makan!
-lari!
-lihat!
+辞書形 = 命令形 makan!  lari!  lihat!
 
 -------------
 
-dia makan ikan
-dia berlari
-dia melihat film
-dia membaca buku
+dia makan ikan dia berlari dia melihat film dia membaca buku
 
-ikan berenang
-orang berjalan
-kuda berlari
+ikan berenang orang berjalan kuda berlari
 
-ikan tidak berenang
-orang tidak berjalan
+ikan tidak berenang orang tidak berjalan
 
 -----------------
 
-intonation
-CAPS = high
-namaNYA siAPA?
-namaNYA SIapa?
-両方あり
+intonation CAPS = high namaNYA siAPA?  namaNYA SIapa?  両方あり
 
 ------------
 
-音の変化
-bolpoin → bolpen
-pantai → pante
-santai → sante
+音の変化 bolpoin → bolpen pantai → pante santai → sante
 
 
 \end{document}
